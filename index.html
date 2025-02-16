@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="/src/styles/index/index.css">
 </head>
 <body>
-    
+    <main>
+        <section id="titleZone" class="titleZone">
+            <h1>Un gestor de tareas para tu día a día 😉</h1>
+            <button id="startBtn" class="startBtn">🚀 COMENZAR</button>
+        </section>
+        <section id="regLoginContainer">
+            <div id="registerContainer">
+                <h3>Regístrate para comenzar</h3>
+                <form id="registerForm">
+                    <input type="text" name="username" id="username" required placeholder="Primer nombre / Apodo">
+                    <input type="email" name="useremail" id="useremail" required placeholder="Correo electrónico">
+                    <input type="password" name="userPassword" id="userPassword" required placeholder="Contraseña">
+                    <input type="password" name="rePassword" id="rePassword" required placeholder="Repite contraseña">
+                    <button type="submit" id="registerBtn">REGISTRARME</button>
+                </form>
+                <span>¿Ya tienes cuenta? <span id="showLoginForm">Inicia Sesión</span></span>
+            </div>
+            <div id="loginContainer">
+                <h3>¡A un paso: Inicia Sesión!</h3>
+                <form id="loginForm">
+                    <input type="email" name="email" id="email" required placeholder="Correo electrónico">
+                    <input type="password" name="password" id="password" required placeholder="Contraseña">
+                    <button type="submit" id="loginBtn">INGRESAR</button>
+                </form>
+                <span>¿Aún no tienes cuenta? <span id="showLoginForm">Regístrate</span></span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="logoFooter">
+            <img src="#" alt="Logo Todo List-o">
+        </div>
+        <hr>
+        <ul>
+            <li>Desarrollado por Estanislao Salinas Previte</li>
+            <li>Materia: Frontend II en CESDE</li>
+            <li>Profesor: Jossy ---</li>
+        </ul>
+    </footer>
 </body>
 </html>
