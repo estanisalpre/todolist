@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio | Todo List-o</title>
+    <link rel="stylesheet" href="/src/styles/home/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <section class="principalContainer">
             <div class="titleContainer">
-                <span id="welcomeSpan">Hola, Estanis</span>
-                <span>Todo List-o</span>
+                <span id="welcomeSpan">Hola, Estanis 👋</span>
+                <img id="logoutIcon" src="/src/assets/icons/logout.png" alt="Logout Icon">
             </div>
             <div class="newTask">
-                <img src="#" alt="Button to add a new task">
-                <input type="text" name="newTask" id="newTask" placeholder="Agregar una nueva tarea">
+                <input type="text" name="newTask" id="newTask" placeholder="Escribe una nueva tarea aquí...">
                 <button class="addBtn">AGREGAR</button>
             </div>
-            <ul id="taskList"></ul>
+            <ul id="taskList" class="taskList"></ul>
         </section>
     </main>
     <footer>

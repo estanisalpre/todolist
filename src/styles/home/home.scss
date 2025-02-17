@@ -1,0 +1,64 @@
+// Imports
+@use '../resources/mixins' as *;
+@use '../resources/vars' as *;
+@use '../resources/animations';
+@use '../resources/base';
+@use '../resources/footer';
+
+main{
+    @include sizes();
+    @include displayFlex();
+
+    .principalContainer{
+        @include sizes(430px,600px);
+        @include displayFlex();
+        gap: 5px;
+
+        .titleContainer, .newTask, .taskList{
+            @include sizes($height: 40px);
+            @include displayFlex($flexDirection:row, $justifyContent: space-between);
+            background-image: $backgroundImage;
+            border-radius: 10px;
+            padding: 5px;
+            color: $darkFontColor;
+
+            span{
+                font-weight: $bold;
+                font-size: $lg;
+            }
+            img{
+                @include sizes(auto,$height: 95%);
+                cursor: pointer;
+            }
+            input{
+                @include sizes(70%,60%);
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                padding: 5px;
+                font-family: $afacadFont;
+                font-size: $md;
+            }
+        }
+        .newTask{
+            height: 70px;
+            gap: 5px;
+
+            button{
+                @include buttonDesign(30%, 60%);
+                border-radius: 5px;
+                border: 1px solid $darkFontColor;
+                color: $darkFontColor;
+                font-weight: $bold;
+            }
+            button:hover{
+                background-color: #67f671;
+            }
+        }
+        .taskList{
+            height: 100%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+    }
+}

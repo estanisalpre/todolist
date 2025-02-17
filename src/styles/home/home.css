@@ -1,1 +1,245 @@
-/*# sourceMappingURL=home.css.map */
+@keyframes floatLWall {
+  0% {
+    transform: perspective(1500px) rotateY(45deg) translateY(0);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    transform: perspective(1500px) rotateY(45deg) translateY(-5px) translateX(3px) rotateZ(0.5deg);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: perspective(1500px) rotateY(45deg) translateY(5px) translateX(-3px) rotateZ(-0.5deg);
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.22);
+  }
+  75% {
+    transform: perspective(1500px) rotateY(45deg) translateY(-3px) translateX(2px) rotateZ(0.2deg);
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.23);
+  }
+  100% {
+    transform: perspective(1500px) rotateY(45deg) translateY(0);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes floatRWall {
+  0% {
+    transform: perspective(1500px) rotateY(-45deg) translateY(0);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  25% {
+    transform: perspective(1500px) rotateY(-45deg) translateY(-5px) translateX(3px) rotateZ(0.5deg);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    transform: perspective(1500px) rotateY(-45deg) translateY(5px) translateX(-3px) rotateZ(-0.5deg);
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.22);
+  }
+  75% {
+    transform: perspective(1500px) rotateY(-45deg) translateY(-3px) translateX(2px) rotateZ(0.2deg);
+    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.23);
+  }
+  100% {
+    transform: perspective(1500px) rotateY(-45deg) translateY(0);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+@keyframes floatCapsule {
+  0% {
+    transform: translateY(0px);
+    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.253));
+  }
+  25% {
+    transform: translateY(-15px) rotateZ(0.5deg);
+    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.256));
+  }
+  50% {
+    transform: translateY(5px) rotateZ(-0.5deg);
+    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.259));
+  }
+  75% {
+    transform: translateY(-13px) rotateZ(0.2deg);
+    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.261));
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.305));
+  }
+}
+@keyframes translateOut {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1500px);
+  }
+}
+@keyframes translateIn {
+  0% {
+    transform: translateX(1500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideDown {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 220px;
+    opacity: 1;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: linear-gradient(#051327, #000);
+  color: #f1f1f1;
+  background-size: cover;
+  font-family: "Afacad", serif;
+  background-attachment: fixed;
+}
+body li {
+  list-style: none;
+}
+
+footer {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  color: #2c2c2c;
+}
+footer .logoFooter {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+footer .logoFooter img {
+  width: auto;
+  height: 50px;
+  cursor: pointer;
+}
+footer hr {
+  border: 1px solid rgb(188, 188, 188);
+  height: 90px;
+}
+footer ul {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+main .principalContainer {
+  width: 430px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+main .principalContainer .titleContainer, main .principalContainer .newTask, main .principalContainer .taskList {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  border-radius: 10px;
+  padding: 5px;
+  color: #2c2c2c;
+}
+main .principalContainer .titleContainer span, main .principalContainer .newTask span, main .principalContainer .taskList span {
+  font-weight: 600;
+  font-size: 22px;
+}
+main .principalContainer .titleContainer img, main .principalContainer .newTask img, main .principalContainer .taskList img {
+  width: auto;
+  height: 95%;
+  cursor: pointer;
+}
+main .principalContainer .titleContainer input, main .principalContainer .newTask input, main .principalContainer .taskList input {
+  width: 70%;
+  height: 60%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-family: "Afacad", serif;
+  font-size: 16px;
+}
+main .principalContainer .newTask {
+  height: 70px;
+  gap: 5px;
+}
+main .principalContainer .newTask button {
+  padding: 5px;
+  border: 1px solid #f1f1f1;
+  border-radius: 50px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-family: "Afacad", serif;
+  width: 30%;
+  height: 60%;
+  font-size: 16px;
+  color: #f1f1f1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #2c2c2c;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+main .principalContainer .newTask button:hover {
+  background-color: #67f671;
+}
+main .principalContainer .taskList {
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}/*# sourceMappingURL=home.css.map */

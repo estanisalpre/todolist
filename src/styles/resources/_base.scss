@@ -20,8 +20,13 @@ body{
     @include sizes();
     align-items: center;
     justify-content: flex-start;
-    background-image: $backgroundImage;
+    background-image: $nightBackgroundImage;
+    color: $lightFontColor;
     background-size: cover;
     font-family: $afacadFont;  
     background-attachment: fixed;
+
+    li{
+        list-style: none;
+    }
 }
