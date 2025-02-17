@@ -1,0 +1,27 @@
+@use 'mixins' as *;
+@use 'vars' as *;
+
+// General
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Html & Body
+html, body{
+    @include sizes();
+    @include displayFlex();
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    @include sizes();
+    align-items: center;
+    justify-content: flex-start;
+    background-image: $backgroundImage;
+    background-size: cover;
+    font-family: $afacadFont;  
+    background-attachment: fixed;
+}
