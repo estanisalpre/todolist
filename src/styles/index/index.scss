@@ -1,0 +1,95 @@
+// Imports
+@use '../resources/mixins' as *;
+@use '../resources/vars' as *;
+@use '../resources/animations';
+@use '../resources/base';
+@use '../resources/footer';
+
+main{
+    @include displayFlex();
+    @include sizes();
+
+    .titleZone{
+        @include sizes();
+        @include displayFlex();
+        gap: 25px;
+
+        h1{
+            font-weight: $bold;
+            font-size: 45px;
+        }
+        button{
+            @include buttonDesign(250px,50px);
+            @include displayFlex();
+            font-size: $lg;
+        }
+        button:hover{
+            background-image: $backgroundImage;
+            color: $darkFontColor;
+        }
+    }
+    #regLoginContainer{
+        border: 1px solid yellow;
+        @include sizes();
+        @include displayFlex();
+
+        .registerContainer, .loginContainer{
+            @include sizes(350px,400px);
+            @include displayFlex();
+            padding: 10px;
+            gap: 10px;
+            display: flex;
+
+            h3{
+                @include sizes($height: 40px);
+                font-size: $lg;
+            }
+            form{
+                @include sizes();
+                @include displayFlex();
+                background-image: $backgroundImage;
+                color: $darkFontColor;
+                gap: 5px;
+                border-radius: 5px;
+                padding: 5px;
+
+                input{
+                    @include displayFlex();
+                    @include sizes($height: 40px);
+                    border-radius: 5px;
+                    border: none;
+                    padding-left: 10px;
+                    font-family: $afacadFont;
+                }
+                button{
+                    @include buttonDesign($height: 40px);
+                    color: $darkFontColor;
+                    border: 1px solid $darkFontColor;
+                    border-radius: 5px;
+                }
+                button:hover{
+                    background-image: $nightBackgroundImage;
+                    color: $lightFontColor;
+                }
+            }
+            span{
+                @include sizes(350px,30px);
+                padding-left: 10px;
+
+                #showLoginForm{
+                    color: #8dfff4;
+                    cursor: pointer;
+                    font-weight: $bold;
+                    padding-left: 0px;
+                }
+                #showLoginForm:hover{
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+        .loginContainer{
+            display: flex;
+            height: 300px;
+        }
+    }
+}
