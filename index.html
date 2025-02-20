@@ -6,8 +6,50 @@
     <title>Todo List-o | Gestor de tareas en simples pasos</title>
     <meta name="description" content="Un sistema que te ayudará a gestionar eficazmente tus días. ¡Regístrate y organízate!">
     <link rel="stylesheet" href="/src/styles/index/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <main>
+        <section id="titleZone" class="titleZone">
+            <h1>Un gestor de tareas para tu día a día 😉</h1>
+            <button id="startBtn" class="startBtn">🚀 COMENZAR</button>
+        </section>
+        <section id="regLoginContainer">
+            <div id="registerContainer" class="registerContainer">
+                <h3>Regístrate para comenzar</h3>
+                <form id="registerForm">
+                    <input type="text" name="userName" id="userName" required placeholder="Primer nombre / Apodo">
+                    <input type="email" name="userEmail" id="userEmail" required placeholder="Correo electrónico">
+                    <input type="password" name="userPassword" id="userPassword" required placeholder="Contraseña">
+                    <input type="password" name="rePassword" id="rePassword" required placeholder="Repite contraseña">
+                    <button type="submit" id="registerBtn">REGISTRARME</button>
+                </form>
+                <span>¿Ya tienes cuenta? <span id="showLoginForm">Inicia Sesión</span></span>
+            </div>
+            <div id="loginContainer" class="loginContainer">
+                <h3>¡A un paso: Inicia Sesión!</h3>
+                <form id="loginForm">
+                    <input type="email" name="email" id="email" required placeholder="Correo electrónico">
+                    <input type="password" name="password" id="password" required placeholder="Contraseña">
+                    <button type="submit" id="loginBtn">INGRESAR</button>
+                </form>
+                <span>¿Aún no tienes cuenta? <span id="showLoginForm">Regístrate</span></span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="logoFooter">
+            <img id="toIndex" src="#" alt="Logo Todo List-o">
+        </div>
+        <hr>
+        <ul>
+            <li>Desarrollado por Estanislao Salinas Previte</li>
+            <li>Materia: Frontend II en CESDE</li>
+            <li>Profesor: Jossy ---</li>
+        </ul>
+    </footer>
+    <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>

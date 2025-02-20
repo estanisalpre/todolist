@@ -1,0 +1,29 @@
+@use 'mixins' as *;
+@use 'vars' as *;
+
+footer{
+    @include sizes($height: 150px);
+    @include displayFlex($flexDirection: row);
+    gap: 50px;
+    background-image: $backgroundImage;
+    color: $darkFontColor;
+
+    .logoFooter{
+        @include sizes(48%);
+        @include displayFlex();
+
+        img{
+            @include sizes(auto, 50px);
+            cursor: pointer;
+        }
+    }
+    hr{
+        border: 1px solid rgb(188, 188, 188);
+        height: 90px;
+    }
+    ul{
+        @include sizes(48%);
+        @include displayFlex();
+        align-items: flex-start;
+    }
+}
