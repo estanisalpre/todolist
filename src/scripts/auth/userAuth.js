@@ -1,6 +1,5 @@
 // All user authentication here
 import { User } from "../class/User.js";
-import { Tasks } from "../class/Tasks.js";
 
 // Calling the DOM
 const userName = document.getElementById('userName');
@@ -27,7 +26,8 @@ export function registerUser(){
             if(emailExist){
                 console.log('usuario existe')
             } else {
-                const newUser = new User(username,email,password);
+                const tasks = [];
+                const newUser = new User(username,email,password,tasks);
                 users.push(newUser);
                 localStorage.setItem('allUsers', JSON.stringify(users));
             }

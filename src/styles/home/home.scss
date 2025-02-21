@@ -1,7 +1,6 @@
 // Imports
 @use '../resources/mixins' as *;
 @use '../resources/vars' as *;
-@use '../resources/animations';
 @use '../resources/base';
 @use '../resources/footer';
 
@@ -59,6 +58,101 @@ main{
             height: 100%;
             overflow-y: scroll;
             scrollbar-width: none;
+            @include displayFlex($justifyContent: flex-start);
+            @include sizes();
+            gap: 5px;
+
+            #logo{
+                @include sizes(60%,auto);
+                display: none;
+            }
+            #tasksEmpty{
+                color: $darkFontColor;
+                @include sizes(70%,$height:40px);
+                @include displayFlex();
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.383);
+                border-radius: 10px;
+                display: none;
+            }
+            li{
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.352);
+                @include sizes($height: 30px);
+                @include displayFlex($flexDirection:row);
+                justify-content:space-between;
+                cursor: pointer;
+                padding: 3px;
+
+                span{
+                    font-size: $md;
+                    padding-left: 5px;
+                    @include displayFlex();
+                    align-items: flex-start;
+                }
+                div{
+                    @include sizes(60px,100%);
+                    @include displayFlex($flexDirection:row, $justifyContent:space-between);
+                    
+                    img{
+                        @include sizes(25px,auto);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .completed{
+                text-decoration: 2px line-through rgb(250, 114, 114);
+            }
+        }
+    }
+    #editModal{
+        @include sizes();
+        @include displayFlex();
+        position: absolute;
+        backdrop-filter: blur(2px);
+        z-index: 100;
+        display: none;
+
+        div{
+            @include sizes(400px, 120px);
+            @include displayFlex($justifyContent: space-between);
+            border-radius: 10px;
+            background-image: $nightBackgroundImage;
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.512);
+            color: $lightFontColor;
+            align-items: flex-start;
+
+            h4{
+                font-size: $md;
+                border-bottom: 1px solid white;
+                @include sizes($height: 30px);
+                @include displayFlex($justifyContent: space-between, $flexDirection: row);
+                align-items: center;
+                padding-left: 10px;
+
+                img{
+                    @include sizes(20px,auto);
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+            input{
+                border: 0px;
+                border-radius: 3px;
+                outline: none;
+                padding-left: 10px;
+                font-family: $afacadFont;
+                @include sizes(95%,$height: 30px);
+                margin-left: 10px
+            }
+            button{
+                @include buttonDesign(50%,30px);
+                margin-bottom: 5px;
+                border-radius: 5px;
+                margin-left: 10px;
+            }
+            button:hover{
+                background-image: $backgroundImage;
+                color: $darkFontColor;
+            }
         }
     }
 }

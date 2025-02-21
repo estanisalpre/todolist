@@ -1,95 +1,3 @@
-@keyframes floatLWall {
-  0% {
-    transform: perspective(1500px) rotateY(45deg) translateY(0);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  25% {
-    transform: perspective(1500px) rotateY(45deg) translateY(-5px) translateX(3px) rotateZ(0.5deg);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
-  }
-  50% {
-    transform: perspective(1500px) rotateY(45deg) translateY(5px) translateX(-3px) rotateZ(-0.5deg);
-    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.22);
-  }
-  75% {
-    transform: perspective(1500px) rotateY(45deg) translateY(-3px) translateX(2px) rotateZ(0.2deg);
-    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.23);
-  }
-  100% {
-    transform: perspective(1500px) rotateY(45deg) translateY(0);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-}
-@keyframes floatRWall {
-  0% {
-    transform: perspective(1500px) rotateY(-45deg) translateY(0);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  25% {
-    transform: perspective(1500px) rotateY(-45deg) translateY(-5px) translateX(3px) rotateZ(0.5deg);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
-  }
-  50% {
-    transform: perspective(1500px) rotateY(-45deg) translateY(5px) translateX(-3px) rotateZ(-0.5deg);
-    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.22);
-  }
-  75% {
-    transform: perspective(1500px) rotateY(-45deg) translateY(-3px) translateX(2px) rotateZ(0.2deg);
-    box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.23);
-  }
-  100% {
-    transform: perspective(1500px) rotateY(-45deg) translateY(0);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  }
-}
-@keyframes floatCapsule {
-  0% {
-    transform: translateY(0px);
-    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.253));
-  }
-  25% {
-    transform: translateY(-15px) rotateZ(0.5deg);
-    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.256));
-  }
-  50% {
-    transform: translateY(5px) rotateZ(-0.5deg);
-    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.259));
-  }
-  75% {
-    transform: translateY(-13px) rotateZ(0.2deg);
-    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.261));
-  }
-  100% {
-    transform: translateY(0);
-    filter: drop-shadow(0px 100px 30px rgba(18, 18, 18, 0.305));
-  }
-}
-@keyframes translateOut {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(1500px);
-  }
-}
-@keyframes translateIn {
-  0% {
-    transform: translateX(1500px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-@keyframes slideDown {
-  from {
-    top: -100px;
-    opacity: 0;
-  }
-  to {
-    top: 220px;
-    opacity: 1;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -146,7 +54,6 @@ footer .logoFooter {
 footer .logoFooter img {
   width: auto;
   height: 50px;
-  cursor: pointer;
 }
 footer hr {
   border: 1px solid rgb(188, 188, 188);
@@ -242,4 +149,144 @@ main .principalContainer .taskList {
   height: 100%;
   overflow-y: scroll;
   scrollbar-width: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+}
+main .principalContainer .taskList #logo {
+  width: 60%;
+  height: auto;
+  display: none;
+}
+main .principalContainer .taskList #tasksEmpty {
+  color: #2c2c2c;
+  width: 70%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.383);
+  border-radius: 10px;
+  display: none;
+}
+main .principalContainer .taskList li {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.352);
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 3px;
+}
+main .principalContainer .taskList li span {
+  font-size: 16px;
+  padding-left: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+main .principalContainer .taskList li div {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+main .principalContainer .taskList li div img {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+main .principalContainer .taskList .completed {
+  -webkit-text-decoration: 2px line-through rgb(250, 114, 114);
+          text-decoration: 2px line-through rgb(250, 114, 114);
+}
+main #editModal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  z-index: 100;
+  display: none;
+}
+main #editModal div {
+  width: 400px;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-image: linear-gradient(#051327, #000);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.512);
+  color: #f1f1f1;
+  align-items: flex-start;
+}
+main #editModal div h4 {
+  font-size: 16px;
+  border-bottom: 1px solid white;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+  padding-left: 10px;
+}
+main #editModal div h4 img {
+  width: 20px;
+  height: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+main #editModal div input {
+  border: 0px;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 10px;
+  font-family: "Afacad", serif;
+  width: 95%;
+  height: 30px;
+  margin-left: 10px;
+}
+main #editModal div button {
+  padding: 5px;
+  border: 1px solid #f1f1f1;
+  border-radius: 50px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-family: "Afacad", serif;
+  width: 50%;
+  height: 30px;
+  font-size: 16px;
+  color: #f1f1f1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+main #editModal div button:hover {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  color: #2c2c2c;
 }/*# sourceMappingURL=home.css.map */

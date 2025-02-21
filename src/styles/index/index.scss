@@ -1,7 +1,6 @@
 // Imports
 @use '../resources/mixins' as *;
 @use '../resources/vars' as *;
-@use '../resources/animations';
 @use '../resources/base';
 @use '../resources/footer';
 
@@ -14,12 +13,17 @@ main{
         @include displayFlex();
         gap: 25px;
 
+        img{
+            @include sizes(450px,auto);
+        }
         h1{
+            @include sizes(60%,auto);
+            @include displayFlex();
             font-weight: $bold;
             font-size: 45px;
         }
         button{
-            @include buttonDesign(250px,50px);
+            @include buttonDesign(350px,50px);
             @include displayFlex();
             font-size: $lg;
         }
@@ -29,9 +33,9 @@ main{
         }
     }
     #regLoginContainer{
-        border: 1px solid yellow;
         @include sizes();
         @include displayFlex();
+        display: none;
 
         .registerContainer, .loginContainer{
             @include sizes(350px,400px);
@@ -76,13 +80,13 @@ main{
                 @include sizes(350px,30px);
                 padding-left: 10px;
 
-                #showLoginForm{
+                #showLoginForm, #showRegisterForm{
                     color: #8dfff4;
                     cursor: pointer;
                     font-weight: $bold;
                     padding-left: 0px;
                 }
-                #showLoginForm:hover{
+                #showLoginForm:hover, #showRegisterForm:hover{
                     border-bottom: 1px solid white;
                 }
             }
@@ -90,6 +94,7 @@ main{
         .loginContainer{
             display: flex;
             height: 300px;
+            display: none;
         }
     }
 }
