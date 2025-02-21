@@ -8,30 +8,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/src/assets/logo/todolist-o.png" type="image/x-icon">
 </head>
 <body>
     <main>
         <section class="principalContainer">
             <div class="titleContainer">
-                <span id="welcomeSpan">Hola, Estanis 👋</span>
+                <span id="welcomeSpan"></span>
                 <img id="logoutIcon" src="/src/assets/icons/logout.png" alt="Logout Icon">
             </div>
             <div class="newTask">
                 <input type="text" name="newTask" id="newTask" placeholder="Escribe una nueva tarea aquí...">
-                <button class="addBtn">AGREGAR</button>
+                <button id="addBtn" class="addBtn">AGREGAR</button>
             </div>
-            <ul id="taskList" class="taskList"></ul>
+            <ul id="taskList" class="taskList">
+                <img id="logo" src="/src/assets/logo/todolist-o-long.png" alt="Todo List-o Logo">
+                <span id="tasksEmpty"></span>
+            </ul>
+        </section>
+        <section id="editModal">
+            <div>
+                <h4>Edita tu tarea aquí <img id="closeModal" src="/src/assets/icons/close.png" alt="Close Modals Icon"></h4>
+                <input type="text" name="newInput" id="newInput" placeholder="...." required>
+                <button id="editModalBtn">Confirmar</button>
+            </div>
         </section>
     </main>
     <footer>
         <div class="logoFooter">
-            <img src="#" alt="Logo Todo List-o">
+            <img src="/src/assets/logo/todolist-o.png" alt="Logo Todo List-o">
         </div>
         <hr>
         <ul>
             <li>Desarrollado por Estanislao Salinas Previte</li>
             <li>Materia: Frontend II en CESDE</li>
-            <li>Profesor: Jossy ---</li>
+            <li>Profesor: Jossy Tello</li>
         </ul>
     </footer>
     <script type="module" src="/src/scripts/app.js"></script>
